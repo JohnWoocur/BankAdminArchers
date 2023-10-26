@@ -1,0 +1,17 @@
+  
+cd"d:\cpp\";if($?)
+	st_001	sheba	puttalam	0776863033	sheba@gmail.com
+	st_002	thach	puttalam	0772154875	thachu@gmail.com
+	st_003	ad	vavuniya	0546532	ad@gmai.com
+	st_004	nusra	puttalma	046543210	jhhjfyg
+	cd	"d:\cpp\"	;	if	($?)
+	syt_006	sibu	putt	0224785	czcz2gmail.com
+	cd	"d:\cpp\"	;	if	($?)
+	sst_008	rifky	puttalam	012457896	rifky@gmail.com
+	1000	John	woocur	077	1234567
+	10002	woocurs	vavuniya	07712154'	ndkef@gmail.com
+	bvdkjb	gkjdvn	vdnvgk	vjkdf	vjd
+	001	linthujan	uk	076	li@dg.com
+	s	s	s	s	s
+	005	Woocur	Vavuniya	0777123456\	woocur@gmail.com
+	7	John	Vavuniya	0777	jj@gmail.com
