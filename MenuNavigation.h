@@ -15,9 +15,9 @@ int welcomeScreen()
     println("--------------------------------- ADMIN PANEL ----------------------------------");
     println("--------------------------------------------------------------------------------");
     println("|      1. Create Customer Account                                              |");
-    println("|      2. Show Customer Account Balance                                        |");
-    println("|      3. Modify Customer Account                                              |");
-    println("|      4. View Customer Accounts                                               |");
+    println("|      2. View Customer Account                                       |");
+    println("|      3. Staff Report                                              |");
+    println("|      4. Customer Report                                               |");
     println("|      5. Staff Account management                                             |");
     println("|      6. Deposit Amount                                                       |");
     println("|      7. Withdraw Amount                                                      |");

@@ -1,23 +1,41 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<vector>
 
 using namespace std;
 
 int cReport()
 {
-    fstream CusFile;
-    string txtOut;
     int input;
 
-    CusFile.open("customer.txt");
-    system("cls");
-    cout<<"account_no account name type address phone email nic dob balance"<<endl;
-    while(getline(CusFile,txtOut))
-    {
-        cout <<txtOut<<endl;
+    cout <<"\t|--------|All Customers|--------|"<<endl;
+    fstream file("Customers.txt");
+    vector<int> user;
+    if(file.is_open()){
+        int id;
+        while(file>>id){
+            user.push_back(id);
+        }
+        file.close();
     }
-    cout<<"choose option"<<endl;
+    for(int i=0; i<user.size(); i++){
+        string cid,name,amount;
+        int ii = user[i];
+        ifstream file("Customers/"+to_string(ii)+".txt");
+        if(file.is_open()){
+            file >>cid>>name>>amount;
+            cout << "Customer id   : "<<cid << endl;
+            cout << "Customer name : "<<name << endl;
+            cout << "Balance       : "<<amount << endl;
+        }
+        if(i % 3 == 1){
+            cout <<endl;
+        }
+    }
+
+    cout<<endl;
+    cout<<"| choose option |"<<endl;
     cout<<"1 back to main"<<endl;
     cout<<"98 logout"<<endl;
     cout<<"99 exit"<<endl;
