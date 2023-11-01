@@ -93,18 +93,19 @@ int payroll()
   switch (ans)
   {
   case 2:
-    return 0;
+    return 100;
     break;
 
   case 3:
-    return 0;
+    return 98;
     break;
 
   case 4:
-    return 0;
+    return 99;
     break;
 
   default:
     return 100;
+    break;
   }
 }
