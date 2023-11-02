@@ -1,53 +1,41 @@
 #include <iostream>
  #include <fstream>
  #include <string>
- #include <cstdlib>
  using namespace std;
 
 
 int showCustomer()
 
 {
-   int opt ,account ,phoneno;
-   float balance;
-   string name ,address ,type ,email ,nic ,dob;
+   int opt;
+   string id,name,amount;
 
     do{
-    bool isfound=false;
-    int accno;
+    int cus;
     system("cls");
     cout<<"\t\t============= | Customer Details | ============="<<endl;
-    cout<<"\n\tEnter your account number : ";
-    cin>>accno;
+    cout<<"\n\tEnter your customer id : ";
+    cin>>cus;
 
-    fstream accReadFile;
-    string txtOut;
+    string file = "Customers/"+to_string(cus)+".txt";
+    ifstream myFileR(file);
+        if(myFileR.is_open()){
 
-    accReadFile.open("customer.txt");
-    while(accReadFile>>account>>name>>type>>address>>phoneno>>email>>nic>>dob>>balance)
-    {
-       if(accno==account)
-        {
-            isfound=true;
-            cout<<"\n\n\t\tAccount number :"<<account <<endl;
-            cout<<"\t\tName :"<<name<<endl;
-            cout<<"\t\tType :"<<type <<endl;
-            cout<<"\t\tAddress :"<<address <<endl;
-            cout<<"\t\tPhone number :"<<phoneno <<endl;
-            cout<<"\t\tEmail :"<<email <<endl;
-            cout<<"\t\tNIC :"<<nic <<endl;
-            cout<<"\t\tDoB :"<<dob <<endl;
-            cout<<"\t\tBalance :"<<balance<<endl;
+            while (myFileR>>id>>name>>amount)
+            {
+                cout <<"Customer Id : "<<id<<endl;
+                cout <<"name        : "<<name<<endl;
+                cout <<"Balance     : "<<amount<<endl;
+                cout<<endl;
+
+            }myFileR.close();
+
+            }
+
+
+        else{
+          cout <<"Customer not found .."<<endl;
         }
-
-    }
-     accReadFile.close();
-
-       if(!isfound)
-     {
-        cout<<"Account is not found"<<endl;
-     }
-
 
     cout<<"\n\n\t\t\t\t1.View another account number\n";
     cout<<"\t\t\t\t2.Back to main menu\n";
@@ -81,6 +69,7 @@ int showCustomer()
 
 
     cout<<"\t\t============= | Thank You | =============";
+    return 0;
 
 
 }

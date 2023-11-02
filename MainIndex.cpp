@@ -17,7 +17,7 @@
 #include "streport.h"
 #include "cadd.h"
 #include "showCustomer.h"
-#include "stadd.h"
+#include "stadd2.h"
 
 using namespace std;
 
@@ -51,7 +51,7 @@ int main()
             input = showCustomer(); // Call your functions here those functions shoud return value at the end of function
             break;
         case 3:
-            input = test(); // Call your functions here those functions shoud return value at the end of function
+            input = sreport(); // Call your functions here those functions shoud return value at the end of function
             break;
         case 4:
             input = cReport(); // Call your functions here those functions shoud return value at the end of function
@@ -64,7 +64,7 @@ int main()
             input = deposit(); // Call your functions here those functions shoud return value at the end of function
             break;
         case 7:
-            input = withdrawal(); // Call your functions here those functions shoud return value at the end of function
+            input = withdraw(); // Call your functions here those functions shoud return value at the end of function
             break;
         case 8:
             input = payroll(); // Call your functions here those functions shoud return value at the end of function
