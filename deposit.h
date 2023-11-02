@@ -11,66 +11,50 @@ void topbar()
   cout << "\n\n\n";
 }
 
-float deposit()
+int deposit()
 {
 
   bool isCompleted = false;
   int opt = 0;
-  int account = 0, initial, phone, dob, input;
-  string name, type, address, email, nic;
-
-  int fileaccount, fileinitial, filephone, filedob;
-  string filename, filetype, fileaddress, fileemail, filenic;
-
-  topbar();
-
-  fstream file("customer.txt");
-
-start:
-  cout << "\t\t\t\t\t\tEnter your Account no: ";
-  cin >> input;
-
-  while (file >> account, name, type, initial, address, phone, email, nic, dob)
-  {
-    if (input == account)
-    {
-      account = fileaccount;
-      initial = fileinitial;
-      phone = filephone;
-      dob = filedob;
-      name = filename;
-      type = filetype;
-      address = fileaddress;
-      email = fileemail;
-      nic = filenic;
-    }
-  }
-  if (account != 0)
-  {
-    cout << "\t\t\t\t\t Invalid Account No..kindly Re-Check your Account No \n\n";
-    goto start;
-  }
+  int cID,amount;
+    string name;
+    int dep;
+    topbar();
+    cout << "Enter your customer id : ";
+    cin >> cID;
 
   do
   {
-    double amount, curAmount;
+    string file = "Customers/"+to_string(cID)+".txt";
+    ifstream myFileR(file);
+        if(myFileR.is_open()){
+            while (myFileR>>cID>>name>>amount)
+            {
+                cout <<"Customer Id : "<<cID<<endl;
+                cout <<"name        : "<<name<<endl;
+                cout <<"Balance     : "<<amount<<endl;
+                cout<<endl;
+                cout <<"Enter Amount for deposit : ";
+                cin >> dep;
+                //int bald = stoi(amount);
+                int bal = amount+dep;
+                ofstream myFileRR(file);
+                if(myFileRR.is_open()){
+                  myFileRR << cID <<" " <<name << " " <<bal;
+                  myFileRR.close();
+                  cout <<"Balance Updated ..."<<endl;
+                  cout <<"Updated Details"<<endl;
+                  cout <<"\tCustomer Id : "<<cID<<endl;
+                  cout <<"\tname        : "<<name<<endl;
+                  cout <<"\tBalance     : "<<bal<<endl;
+                }
 
-    topbar();
+            }myFileR.close();
 
-    cout << "Name : " << name << endl;
-    cout << "Account No : " << account << endl;
-    cout << "Ac Type : " << type << endl;
-    cout << "Current Balance : " << initial << endl;
-
-    cout << "\n";
-    cout << "\t\t\t\t\t\tEnter the amount u're going to Deposit: ";
-    cin >> amount;
-
-    curAmount = amount + initial;
-
-    cout << "\n";
-    cout << "\t\t\t\t\t\tyour current balance is: " << curAmount;
-    cout << "\n";
+        }
+        else{
+          cout <<"Customer not found .."<<endl;
+        }
 
     cout << "\n\t\t\t\t\t Do you want to Deposit again? \n";
     cout << "\t\t\t\t\t 1. Yes \n";
@@ -84,6 +68,7 @@ start:
     else if (opt == 2)
     {
       isCompleted = false;
+      return 100;
     }
 
   } while (isCompleted);
