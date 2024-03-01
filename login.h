@@ -26,7 +26,7 @@ int login()
         print("Enter Password : ");
         cin >> password;
 
-        if (username == "admin" && password == "admin")
+        if (username == "user" && password == "user")
         {
             return 100;
         }
