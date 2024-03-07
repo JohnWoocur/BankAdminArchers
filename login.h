@@ -19,7 +19,7 @@ int login()
         println("|                                                                              |");
         println("--------------------------------------------------------------------------------");
         if(invalid){
-            cout << "Invalid Credintials !!! (" << 3 - count << " attempts more)\n\n" << endl;
+            cout << "Invalid Credintials  !!! (" << 3 - count << " attempts more)\n\n" << endl;
         }
         print("Enter Username : ");
         cin >> username;
